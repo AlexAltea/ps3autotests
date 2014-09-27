@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "basic", "tests\cpu\basic\basic.vcxproj", "{3B6039E8-E465-5B7A-D46D-6886B85D7F31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|PS3 = Debug|PS3
+		Release|PS3 = Release|PS3
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Debug|PS3.ActiveCfg = Debug|PS3
+		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Debug|PS3.Build.0 = Debug|PS3
+		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Release|PS3.ActiveCfg = Release|PS3
+		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Release|PS3.Build.0 = Release|PS3
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

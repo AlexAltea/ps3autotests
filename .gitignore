@@ -4,17 +4,10 @@
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
 
 # Compiled Static libraries
 *.lai
@@ -26,3 +19,14 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio files
+*.ilk
+*.opensdf
+*.pdb
+*.sdf
+*.suo
+*.user
+
+# PS3 Autotests
+/**/Temp/*
