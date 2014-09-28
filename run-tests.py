@@ -45,6 +45,7 @@ def runTests(emulator, baseDir):
                 print " - Success:", project
             else:
                 print " - Error:", project
+                print result
                 errors = True
 
     # Return errors

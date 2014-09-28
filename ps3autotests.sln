@@ -2,6 +2,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "basic", "tests\cpu\basic\basic.vcxproj", "{3B6039E8-E465-5B7A-D46D-6886B85D7F31}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1647423A-0A19-49F5-873C-5848DC932310}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cpu", "cpu", "{E389458B-C6D4-4982-A49B-F6E3EFD7A37C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ppu_integer_arithmetic", "tests\cpu\ppu_integer_arithmetic\ppu_integer_arithmetic.vcxproj", "{57277166-A9B7-3861-8E98-667CBEEB4037}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|PS3 = Debug|PS3
@@ -12,8 +18,17 @@ Global
 		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Debug|PS3.Build.0 = Debug|PS3
 		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Release|PS3.ActiveCfg = Release|PS3
 		{3B6039E8-E465-5B7A-D46D-6886B85D7F31}.Release|PS3.Build.0 = Release|PS3
+		{57277166-A9B7-3861-8E98-667CBEEB4037}.Debug|PS3.ActiveCfg = Debug|PS3
+		{57277166-A9B7-3861-8E98-667CBEEB4037}.Debug|PS3.Build.0 = Debug|PS3
+		{57277166-A9B7-3861-8E98-667CBEEB4037}.Release|PS3.ActiveCfg = Release|PS3
+		{57277166-A9B7-3861-8E98-667CBEEB4037}.Release|PS3.Build.0 = Release|PS3
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E389458B-C6D4-4982-A49B-F6E3EFD7A37C} = {1647423A-0A19-49F5-873C-5848DC932310}
+		{3B6039E8-E465-5B7A-D46D-6886B85D7F31} = {E389458B-C6D4-4982-A49B-F6E3EFD7A37C}
+		{57277166-A9B7-3861-8E98-667CBEEB4037} = {E389458B-C6D4-4982-A49B-F6E3EFD7A37C}
 	EndGlobalSection
 EndGlobal

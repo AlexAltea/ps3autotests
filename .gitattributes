@@ -1,1 +1,2 @@
+# Avoid changes in line endings of test files
 *.expected -text
