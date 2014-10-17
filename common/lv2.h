@@ -2,6 +2,11 @@
 
 #include <sys/syscall.h>
 
+#include <sys/ppu_thread.h>
+#include <sys/sys_time.h>
+#include <sys/synchronization.h>
+#include <sys/timer.h>
+
 // LV2 SysCalls table
 #define SYS_PROCESS_GETPID                                     1
 #define SYS_PROCESS_WAIT_FOR_CHILD                             2
@@ -87,6 +92,7 @@
 #define SYS_EVENT_PORT_CONNECT_IPC                           140
 #define SYS_TIMER_USLEEP                                     141
 #define SYS_TIMER_SLEEP                                      142
+#define SYS_TIME_GET_TIMEZONE                                144
 #define SYS_TIME_GET_CURRENT_TIME                            145
 #define SYS_TIME_GET_TIMEBASE_FREQUENCY                      147
 #define SYS_RWLOCK_TRYWLOCK                                  148
@@ -260,5 +266,17 @@ uint64_t lv2_syscall_1(uint64_t id, uint64_t a1)
 uint64_t lv2_syscall_2(uint64_t id, uint64_t a1, uint64_t a2)
 {
 	system_call_2(id, a1, a2);
+	return_to_user_prog(uint64_t);
+}
+
+uint64_t lv2_syscall_3(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3)
+{
+	system_call_3(id, a1, a2, a3);
+	return_to_user_prog(uint64_t);
+}
+
+uint64_t lv2_syscall_4(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4)
+{
+	system_call_4(id, a1, a2, a3, a4);
 	return_to_user_prog(uint64_t);
 }

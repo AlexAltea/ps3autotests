@@ -1,0 +1,13 @@
+sys_time_get_timebase_frequency:
+ - return: 0x4c1a6c0 (79800000)
+
+sys_time_get_current_time:
+ - return: 0x0
+ - sec diff: 0x0
+ - nsec diff: 0xcc7
+
+lv2_sys_time_get_timezone:
+ - return: 0x0
+ - timezone: 0x7800000000
+ - summertime: 0x0
+
