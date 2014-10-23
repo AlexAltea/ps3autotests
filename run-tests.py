@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import os
+import ntpath
 import sys
 import subprocess
 
@@ -11,6 +12,9 @@ OUTPUT_FILE   = 1 # The test generates a file called 'output.txt'
 COMPARE_BIN   = 0 # Output is validated byte per byte
 COMPARE_TEXT  = 1 # Output is validated as text, replacing CRLF with LF
 COMPARE_SMART = 2 # Output is validated following rules specified below
+
+# Absolute path to this script
+scriptFolder = os.path.dirname(os.path.realpath(__file__))
 
 # List of tests and benchmarks
 autotests = (
@@ -29,11 +33,12 @@ def runTests(emulator, baseDir):
     # Run tests
     for test in autotests:
         # Parameters
-        projectFolder = test[0]
-        projectName = projectFolder[projectFolder.rfind('/')+1:]
-        elfPath = projectFolder + '/' + projectName + '.ppu.self'
-        expectedPath = projectFolder + '/' + projectName + '.expected'
-        outputPath = projectFolder + '/output.txt'
+        relProjectFolder = test[0]
+        absProjectFolder = os.path.join(scriptFolder, relProjectFolder)
+        projectName = ntpath.basename(relProjectFolder)
+        elfPath = os.path.join(absProjectFolder, projectName) + '.ppu.self'
+        expectedPath = os.path.join(absProjectFolder, projectName) + '.expected'
+        outputPath = os.path.join(absProjectFolder, 'output.txt')
         outputMethod = test[1]
         compareMethod = test[2]
 
@@ -52,9 +57,9 @@ def runTests(emulator, baseDir):
         if compareMethod == COMPARE_TEXT:
             result = result.replace('\r\n', '\n')
             if result == expected.read():
-                print " - Success:", projectFolder
+                print " - Success:", relProjectFolder
             else:
-                print " - Error:", projectFolder
+                print " - Error:", relProjectFolder
                 print result
                 errors = True
 
