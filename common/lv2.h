@@ -2,6 +2,7 @@
 
 #include <sys/syscall.h>
 
+#include <sys/event.h>
 #include <sys/ppu_thread.h>
 #include <sys/sys_time.h>
 #include <sys/synchronization.h>
@@ -28,6 +29,8 @@
 #define SYS_PPU_THREAD_SET_PRIORITY                           47
 #define SYS_PPU_THREAD_GET_PRIORITY                           48
 #define SYS_PPU_THREAD_GET_STACK_INFORMATION                  49
+#define SYS_PPU_THREAD_CREATE                                 52
+#define SYS_PPU_THREAD_START                                  53
 #define SYS_PPU_THREAD_RENAME                                 56
 #define SYS_PPU_THREAD_RECOVER_PAGE_FAULT                     57
 #define SYS_PPU_THREAD_GET_PAGE_FAULT_CONTEXT                 58
@@ -253,30 +256,54 @@
 // LV2 SysCalls
 uint64_t lv2_syscall_0(uint64_t id)
 {
-	system_call_0(id);
-	return_to_user_prog(uint64_t);
+    system_call_0(id);
+    return_to_user_prog(uint64_t);
 }
 
 uint64_t lv2_syscall_1(uint64_t id, uint64_t a1)
 {
-	system_call_1(id, a1);
-	return_to_user_prog(uint64_t);
+    system_call_1(id, a1);
+    return_to_user_prog(uint64_t);
 }
 
 uint64_t lv2_syscall_2(uint64_t id, uint64_t a1, uint64_t a2)
 {
-	system_call_2(id, a1, a2);
-	return_to_user_prog(uint64_t);
+    system_call_2(id, a1, a2);
+    return_to_user_prog(uint64_t);
 }
 
 uint64_t lv2_syscall_3(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3)
 {
-	system_call_3(id, a1, a2, a3);
-	return_to_user_prog(uint64_t);
+    system_call_3(id, a1, a2, a3);
+    return_to_user_prog(uint64_t);
 }
 
 uint64_t lv2_syscall_4(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4)
 {
-	system_call_4(id, a1, a2, a3, a4);
-	return_to_user_prog(uint64_t);
+    system_call_4(id, a1, a2, a3, a4);
+    return_to_user_prog(uint64_t);
+}
+
+uint64_t lv2_syscall_5(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4, uint64_t a5)
+{
+    system_call_5(id, a1, a2, a3, a4, a5);
+    return_to_user_prog(uint64_t);
+}
+
+uint64_t lv2_syscall_6(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4, uint64_t a5, uint64_t a6)
+{
+    system_call_6(id, a1, a2, a3, a4, a5, a6);
+    return_to_user_prog(uint64_t);
+}
+
+uint64_t lv2_syscall_7(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4, uint64_t a5, uint64_t a6, uint64_t a7)
+{
+    system_call_7(id, a1, a2, a3, a4, a5, a6, a7);
+    return_to_user_prog(uint64_t);
+}
+
+uint64_t lv2_syscall_8(uint64_t id, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4, uint64_t a5, uint64_t a6, uint64_t a7, uint64_t a8)
+{
+    system_call_8(id, a1, a2, a3, a4, a5, a6, a7, a8);
+    return_to_user_prog(uint64_t);
 }
