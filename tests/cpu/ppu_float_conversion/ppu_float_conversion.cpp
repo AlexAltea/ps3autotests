@@ -101,6 +101,10 @@ int main(void)
     ITERATE1D(__asm__ ("fcfid.  %0,%1" : "=f"(d0) : "f"(d1));  PRINT1("fcfid. ",i,d0));
     ITERATE1F(__asm__ ("fcfid   %0,%1" : "=f"(f0) : "f"(f1));  PRINT1("fcfid  ",i,f0));
     ITERATE1F(__asm__ ("fcfid.  %0,%1" : "=f"(f0) : "f"(f1));  PRINT1("fcfid. ",i,f0));
+    ITERATE1D(__asm__ ("fctid   %0,%1" : "=f"(d0) : "f"(d1));  PRINT1("fctid  ",i,d0));
+    ITERATE1D(__asm__ ("fctid.  %0,%1" : "=f"(d0) : "f"(d1));  PRINT1("fctid. ",i,d0));
+    ITERATE1F(__asm__ ("fctid   %0,%1" : "=f"(f0) : "f"(f1));  PRINT1("fctid  ",i,f0));
+    ITERATE1F(__asm__ ("fctid.  %0,%1" : "=f"(f0) : "f"(f1));  PRINT1("fctid. ",i,f0));
     ITERATE1D(__asm__ ("fctidz  %0,%1" : "=f"(d0) : "f"(d1));  PRINT1("fctidz ",i,d0));
     ITERATE1D(__asm__ ("fctidz. %0,%1" : "=f"(d0) : "f"(d1));  PRINT1("fctidz.",i,d0));
     ITERATE1F(__asm__ ("fctidz  %0,%1" : "=f"(f0) : "f"(f1));  PRINT1("fctidz ",i,f0));
