@@ -20,9 +20,11 @@ scriptFolder = os.path.dirname(os.path.realpath(__file__))
 autotests = (
     ('tests/cpu/basic',                   OUTPUT_STDOUT,  COMPARE_TEXT),
     ('tests/cpu/ppu_branch',              OUTPUT_FILE,    COMPARE_TEXT),
-    #('tests/cpu/ppu_float_arithmetic',    OUTPUT_FILE,    COMPARE_TEXT),
-    #('tests/cpu/ppu_float_compare',       OUTPUT_FILE,    COMPARE_TEXT),
-    #('tests/cpu/ppu_float_conversion',    OUTPUT_FILE,    COMPARE_TEXT),
+    ('tests/cpu/ppu_float_arithmetic',    OUTPUT_FILE,    COMPARE_TEXT),
+    ('tests/cpu/ppu_float_compare',       OUTPUT_FILE,    COMPARE_TEXT),
+    ('tests/cpu/ppu_float_conversion',    OUTPUT_FILE,    COMPARE_TEXT),
+    ('tests/cpu/ppu_float_load',          OUTPUT_FILE,    COMPARE_TEXT),
+    ('tests/cpu/ppu_float_store',         OUTPUT_FILE,    COMPARE_TEXT),
     ('tests/cpu/ppu_integer_arithmetic',  OUTPUT_FILE,    COMPARE_TEXT),
     ('tests/cpu/ppu_integer_compare',     OUTPUT_FILE,    COMPARE_TEXT),
     ('tests/cpu/ppu_integer_logical',     OUTPUT_FILE,    COMPARE_TEXT),
@@ -61,10 +63,9 @@ def runTests(emulator, baseDir):
         if compareMethod == COMPARE_TEXT:
             result = result.replace('\r\n', '\n')
             if result == expected.read():
-                print " - Success:", relProjectFolder
+                print " - Success: ", relProjectFolder
             else:
-                print " - Error:", relProjectFolder
-                print result
+                print " - Error:   ", relProjectFolder
                 errors = True
 
         # Delete output file if necessary
