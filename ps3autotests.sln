@@ -81,6 +81,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "methods_sce_driver", "tests
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ramht", "tests\gpu\ramht\ramht.vcxproj", "{9B96B57F-105F-CE51-5FA1-0107FFFC1522}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dump_ramin", "tests\gpu\dump_ramin\dump_ramin.vcxproj", "{C0251F77-B5BF-57BA-5FCA-0B7B0CE16FD5}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dump_mmio", "tests\gpu\dump_mmio\dump_mmio.vcxproj", "{4C8D6E75-3B16-DA7F-5801-97C86C06DD99}"
 EndProject
 Global
@@ -205,6 +207,10 @@ Global
 		{9B96B57F-105F-CE51-5FA1-0107FFFC1522}.Debug|PS3.Build.0 = Debug|PS3
 		{9B96B57F-105F-CE51-5FA1-0107FFFC1522}.Release|PS3.ActiveCfg = Release|PS3
 		{9B96B57F-105F-CE51-5FA1-0107FFFC1522}.Release|PS3.Build.0 = Release|PS3
+		{C0251F77-B5BF-57BA-5FCA-0B7B0CE16FD5}.Debug|PS3.ActiveCfg = Debug|PS3
+		{C0251F77-B5BF-57BA-5FCA-0B7B0CE16FD5}.Debug|PS3.Build.0 = Debug|PS3
+		{C0251F77-B5BF-57BA-5FCA-0B7B0CE16FD5}.Release|PS3.ActiveCfg = Release|PS3
+		{C0251F77-B5BF-57BA-5FCA-0B7B0CE16FD5}.Release|PS3.Build.0 = Release|PS3
 		{4C8D6E75-3B16-DA7F-5801-97C86C06DD99}.Debug|PS3.ActiveCfg = Debug|PS3
 		{4C8D6E75-3B16-DA7F-5801-97C86C06DD99}.Debug|PS3.Build.0 = Debug|PS3
 		{4C8D6E75-3B16-DA7F-5801-97C86C06DD99}.Release|PS3.ActiveCfg = Release|PS3
