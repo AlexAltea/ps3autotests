@@ -18,17 +18,26 @@
 
 // IOMMU dump size:
 // Dumping from 0x918 onwards will cause a LV1 panic.   
-#define IOMMU_DUMP_SIZE   0x918
+#define IOMMU_PART1_ADDR  0x20000510000ULL
+#define IOMMU_PART1_SIZE  0x918
+#define IOMMU_PART2_ADDR  0x20000511C00ULL
+#define IOMMU_PART2_SIZE  0x68
 
 
 int main() {
-    FILE* handler1 = fopen("/app_home/iommu-4KB-A.bin", "wb");
-    FILE* handler2 = fopen("/app_home/iommu-4KB-B.bin", "wb");
+    FILE* handler1A = fopen("/app_home/iommu-part1-A.bin", "wb");
+    FILE* handler2A = fopen("/app_home/iommu-part2-A.bin", "wb");
+    FILE* handler1B = fopen("/app_home/iommu-part1-B.bin", "wb");
+    FILE* handler2B = fopen("/app_home/iommu-part2-B.bin", "wb");
 
     // Dumping IOMMU
-    for (size_t i = 0; i < IOMMU_DUMP_SIZE; i += 8) {
-        uint64_t result = lv1_read64(0x20000510000ULL + i);
-        fwrite(&result, sizeof(result), 1, handler1);
+    for (size_t i = 0; i < IOMMU_PART1_SIZE; i += 8) {
+        uint64_t result = lv1_read64(IOMMU_PART1_ADDR + i);
+        fwrite(&result, sizeof(result), 1, handler1A);
+    }
+    for (size_t i = 0; i < IOMMU_PART2_SIZE; i += 8) {
+        uint64_t result = lv1_read64(IOMMU_PART2_ADDR + i);
+        fwrite(&result, sizeof(result), 1, handler2A);
     }
 
     // Initialize GCM
@@ -38,9 +47,13 @@ int main() {
     cellGcmInit(cmdSize, ioSize, ioAddress);
 
     // Dumping IOMMU
-    for (size_t i = 0; i < IOMMU_DUMP_SIZE; i += 8) {
-        uint64_t result = lv1_read64(0x20000510000ULL + i);
-        fwrite(&result, sizeof(result), 1, handler2);
+    for (size_t i = 0; i < IOMMU_PART1_SIZE; i += 8) {
+        uint64_t result = lv1_read64(IOMMU_PART1_ADDR + i);
+        fwrite(&result, sizeof(result), 1, handler1B);
+    }
+    for (size_t i = 0; i < IOMMU_PART2_SIZE; i += 8) {
+        uint64_t result = lv1_read64(IOMMU_PART2_ADDR + i);
+        fwrite(&result, sizeof(result), 1, handler2B);
     }
 
     printf("Done!\n");
