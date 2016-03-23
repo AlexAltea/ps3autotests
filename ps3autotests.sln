@@ -87,6 +87,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dump_mmio", "tests\gpu\dump
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dump_iommu", "tests\gpu\dump_iommu\dump_iommu.vcxproj", "{C5C91C4A-9310-758F-51D3-151AF6A96D8C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "user_vram_access", "exploits\user_vram_access\user_vram_access.vcxproj", "{17E682FA-E272-F291-5FC9-0EBCFF23437C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|PS3 = Debug|PS3
@@ -221,6 +223,10 @@ Global
 		{C5C91C4A-9310-758F-51D3-151AF6A96D8C}.Debug|PS3.Build.0 = Debug|PS3
 		{C5C91C4A-9310-758F-51D3-151AF6A96D8C}.Release|PS3.ActiveCfg = Release|PS3
 		{C5C91C4A-9310-758F-51D3-151AF6A96D8C}.Release|PS3.Build.0 = Release|PS3
+		{17E682FA-E272-F291-5FC9-0EBCFF23437C}.Debug|PS3.ActiveCfg = Debug|PS3
+		{17E682FA-E272-F291-5FC9-0EBCFF23437C}.Debug|PS3.Build.0 = Debug|PS3
+		{17E682FA-E272-F291-5FC9-0EBCFF23437C}.Release|PS3.ActiveCfg = Release|PS3
+		{17E682FA-E272-F291-5FC9-0EBCFF23437C}.Release|PS3.Build.0 = Release|PS3
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -263,5 +269,6 @@ Global
 		{ACB281E9-A08E-476C-5D9A-F11CF6210CC8} = {DC4E1EA9-CB9F-46CC-A132-6281F0A7ED5B}
 		{F751868F-4804-B27A-F9BD-A1A72BA2DD77} = {FF9794F3-7E30-4909-80DD-36CA5D6B2459}
 		{7B081B54-EC1B-3210-41F8-15DD3C0066A7} = {FF9794F3-7E30-4909-80DD-36CA5D6B2459}
+		{17E682FA-E272-F291-5FC9-0EBCFF23437C} = {57430918-20A2-4AB0-89FB-1AED45904580}
 	EndGlobalSection
 EndGlobal
